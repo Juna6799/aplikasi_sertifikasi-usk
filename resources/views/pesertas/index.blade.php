@@ -45,16 +45,24 @@
                             <td>{{ $peserta->email }}</td>
                             <td>{{ $peserta->no_hp }}</td>
                             <td>
-                                {{-- Tombol Edit & Hapus hanya muncul untuk Admin --}}
-                                @if(auth()->check() && auth()->user()->isAdmin())
-                                    <a href="{{ route('pesertas.edit', $peserta->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                    <form action="{{ route('pesertas.destroy', $peserta->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus?')">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
-                                    </form>
-                                @else
-                                    <span class="text-muted">Hanya Lihat</span>
+                                {{-- KELOMPOK TOMBOL AKSI --}}
+                                @if(auth()->check())
+                                    {{-- Tombol Lihat (Show) bisa diakses oleh Admin maupun Peserta yang bersangkutan --}}
+                                    <a href="{{ route('pesertas.show', $peserta->id) }}" class="btn btn-info btn-sm text-white">Lihat</a>
+
+                                    {{-- Jika Admin: Bisa Edit & Hapus seluruh data --}}
+                                    @if(auth()->user()->isAdmin())
+                                        <a href="{{ route('pesertas.edit', $peserta->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                        <form action="{{ route('pesertas.destroy', $peserta->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                        </form>
+
+                                    {{-- Jika Peserta: Bisa Edit data miliknya sendiri --}}
+                                    @elseif(auth()->user()->email === $peserta->email)
+                                        <a href="{{ route('pesertas.edit', $peserta->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    @endif
                                 @endif
                             </td>
                         </tr>
