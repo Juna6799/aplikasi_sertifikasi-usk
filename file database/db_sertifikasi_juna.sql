@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 13, 2026 at 01:26 AM
+-- Generation Time: Oct 13, 2026 at 04:31 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.2.21
 
@@ -177,9 +177,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('AkgEGhPKvSlyBfYEcYHaxohuEXudpvIyQSwbzUj5', 3, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiamhldWd3YlpvUW03ZEZuZFdjRlJkcWpIZXB1ZmZIWVNWSWpHamhrNSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9za2VtYXMiO3M6NToicm91dGUiO3M6MTI6InNrZW1hcy5pbmRleCI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjM7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjQ6IjNlZGJlYzEwMmIyOGQwMzk5ODgxYjlhNzU5YjJkYTAzYjJkYmQ5ZmM2MDA2NzBjYjM4NWY0Y2Q0YzQyYWZkYjQiO30=', 1791854432),
-('eKSV2S1cVRlc4G4ADvnod2agk60xYC5WW3hiTOFQ', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoicmlRdkVmZXNDQ0p2M0JPUkR5TmVEQU96Q3FtM0JsYmxwdEZCajBEWSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9za2VtYXMiO3M6NToicm91dGUiO3M6MTI6InNrZW1hcy5pbmRleCI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjQ6IjFlZmFhNGQ0MzViYTlhODkxNjEwNmNlYzQwNjJlOTM1N2MxNmZjZmMzMTZhNWJjYTIzZTIzOWM0ZDhmNjMxM2QiO3M6NDoiYXV0aCI7YToxOntzOjIxOiJwYXNzd29yZF9jb25maXJtZWRfYXQiO2k6MTc5MTc4OTA4MDt9fQ==', 1791789730),
-('rY16EqlytQdC1AmuInBJYk39tUOKlc6JZkS6GfNP', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.141.0 Chrome/150.0.7871.250 Electron/43.7.7 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWVhTS0JTcE9WaHhQc0ZVQ2JrbHJNbjlYY1RuWlRWbVBXcmhTVzZJOCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo3OiJ3ZWxjb21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1791851421);
+('rY16EqlytQdC1AmuInBJYk39tUOKlc6JZkS6GfNP', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.141.0 Chrome/150.0.7871.250 Electron/43.7.7 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWVhTS0JTcE9WaHhQc0ZVQ2JrbHJNbjlYY1RuWlRWbVBXcmhTVzZJOCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo3OiJ3ZWxjb21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1791864960),
+('YCYm3rdhUWXa8QQv56cPMrBrjw4kGrh798SQOumA', 5, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoia2FLVUVPS2NnaWhSSElPS2lGQVFoTzlkMjg2bHFCSnFtV2daY0ozbyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wZXNlcnRhcyI7czo1OiJyb3V0ZSI7czoxNDoicGVzZXJ0YXMuaW5kZXgiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo1O3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjY0OiI0OTVkYmIzZGE1OTUxYzY5MWM5MGIwOGU2NGRjNzg4NDFjNmIyNDAyZDNmN2Q2NGIyODgzM2UyZmU2MzFiMjExIjtzOjQ6ImF1dGgiO2E6MTp7czoyMToicGFzc3dvcmRfY29uZmlybWVkX2F0IjtpOjE3OTE4NjQ1OTg7fX0=', 1791865546);
 
 -- --------------------------------------------------------
 
@@ -230,7 +229,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `role`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Admin', 'admin@gmail.com', 'admin', NULL, '$2y$12$9M8dvlh9PamtmZxTeN.95eWBSCi9eIQry4d/AZjnOH9krnQ40YuFe', NULL, '2026-10-11 19:12:17', '2026-10-11 19:12:17'),
-(3, 'Benares', 'ares@gmail.com', 'peserta', NULL, '$2y$12$YiWRQCXG89lgmo7gm0NkReWMl2PLR7KzuksC9g81VPeCWDFd0A1U.', NULL, '2026-10-12 18:05:07', '2026-10-12 18:05:07');
+(3, 'Benares', 'ares@gmail.com', 'peserta', NULL, '$2y$12$YiWRQCXG89lgmo7gm0NkReWMl2PLR7KzuksC9g81VPeCWDFd0A1U.', NULL, '2026-10-12 18:05:07', '2026-10-12 18:05:07'),
+(4, 'tadashi', 'tadashi@gmail.com', 'peserta', NULL, '$2y$12$pnYf2W6nD4fAbkZSm6M25.oh.THD.Fbfg3O/xMRM7TWdRkhTJqWoq', NULL, '2026-10-12 20:37:27', '2026-10-12 20:37:27'),
+(5, 'Sultan Iskandarin', 'iskandar@gmail.com', 'peserta', NULL, '$2y$12$TjClxXZDGJJxtPHXC.KHb.x7FFVTeZ9glP1PEtume6A32sK/ex1F6', NULL, '2026-10-12 20:39:07', '2026-10-12 20:39:07');
 
 --
 -- Indexes for dumped tables
@@ -350,7 +351,7 @@ ALTER TABLE `skemas`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
