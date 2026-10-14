@@ -5,7 +5,6 @@ use App\Http\Controllers\SkemaController;
 use App\Http\Controllers\PesertaController;
 use Illuminate\Support\Facades\Route;
 
-// Mengubah rute utama '/' agar menampilkan view 'welcome' terlebih dahulu
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');

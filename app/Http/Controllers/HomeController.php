@@ -18,12 +18,9 @@ class HomeController extends Controller
     {
         $user = Auth::user();
 
-        // Jika yang login adalah peserta
         if ($user->role === 'peserta') {
-            // Cari data peserta berdasarkan email
             $pesertaSaya = Peserta::where('email', $user->email)->first();
 
-            // Jika peserta terdaftar tapi belum punya data di tabel pesertas, buatkan otomatis
             if (!$pesertaSaya) {
                 $pesertaSaya = Peserta::create([
                     'nama_lengkap' => $user->name,
@@ -37,7 +34,6 @@ class HomeController extends Controller
             return view('home', compact('pesertaSaya', 'skemas'));
         }
 
-        // Jika Admin
         $totalSkema = Skema::count();
         $totalPeserta = Peserta::count();
         $pesertaTerbaru = Peserta::latest()->take(5)->get();

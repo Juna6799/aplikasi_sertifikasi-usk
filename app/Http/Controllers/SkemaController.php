@@ -11,7 +11,6 @@ class SkemaController extends Controller
      * Display a listing of the resource.
      */
 
-    // Hanya admin yang diizinkan mengakses fungsi-fungsi modifikasi data
     public function __construct()
     {
         $this->middleware(function ($request, $next){

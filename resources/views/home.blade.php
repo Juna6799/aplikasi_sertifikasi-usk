@@ -5,7 +5,6 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
 
-                <!-- TAMPILAN UNTUK PESERTA -->
                 @if (!auth()->user()->isAdmin())
                     <div class="alert alert-primary mb-4">
                         <h4 class="alert-heading">Selamat Datang, {{ auth()->user()->name }}!</h4>
@@ -13,14 +12,11 @@
                             tersedia.</p>
                     </div>
 
-                    <!-- Data Diri Peserta -->
                     <div class="card mb-4 shadow-sm">
                         <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                             <h5 class="mb-0">Data Diri Peserta</h5>
 
-                            <!--data belum lengkap -->
                             @if (isset($pesertaSaya) && (empty($pesertaSaya->nik) || empty($pesertaSaya->no_hp)))
-
                                 <a href="{{ route('pesertas.edit', $pesertaSaya->id) }}"
                                     class="btn btn-warning btn-sm">Lengkapi Biodata Anda</a>
                             @endif
@@ -57,7 +53,6 @@
                         </div>
                     </div>
 
-                    <!-- Daftar Skema Sertifikasi -->
                     <div class="card shadow-sm">
                         <div class="card-header bg-primary text-white">
                             <h5 class="mb-0">Daftar Skema Sertifikasi Tersedia</h5>
@@ -91,8 +86,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- TAMPILAN UNTUK ADMIN -->
                 @else
                     <div class="alert alert-primary mb-4">
                         <h4 class="alert-heading">Welcome to the Certification App</h4>
@@ -100,7 +93,7 @@
                             navigation panel.</p>
                     </div>
 
-                    <!-- Statistik -->
+
                     <div class="row mb-4">
                         <div class="col-md-6">
                             <div class="card p-3 border-primary">
@@ -116,7 +109,7 @@
                         </div>
                     </div>
 
-                    <!-- Tabel Peserta Terbaru -->
+
                     <div class="card shadow-sm">
                         <div class="card-header bg-white">
                             <h5 class="mb-0">5 Newest Registered Participants</h5>

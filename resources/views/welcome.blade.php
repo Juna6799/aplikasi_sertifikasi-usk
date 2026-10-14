@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplikasi Pengelolaan Data Peserta Sertifikasi</title>
 
-    <!-- Google Fonts & FontAwesome -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -113,16 +112,13 @@
 <body>
 
     <div class="card">
-        <!-- Icon Sertifikasi -->
         <div class="icon-box">
             <i class="fa-solid fa-graduation-cap"></i>
         </div>
 
-        <!-- Judul & Deskripsi -->
         <h1>Certification Application</h1>
         <p>Welcome to the Participant Data & Certification Scheme Management System.</p>
 
-        <!-- Tombol Aksi -->
         <div class="btn-group">
             @if (Route::has('login'))
                 @auth
@@ -143,7 +139,6 @@
             @endif
         </div>
 
-        <!-- Footer Kecil -->
         <div class="footer-text">
             LSP Junior Web Developer &copy; {{ date('Y') }}
         </div>

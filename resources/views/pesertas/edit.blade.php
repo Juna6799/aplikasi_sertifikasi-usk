@@ -78,12 +78,10 @@
         </div>
     </div>
     <script>
-        // Validasi Nama Lengkap: hanya huruf dan spasi
         document.getElementById('nama_lengkap').addEventListener('input', function(e) {
             this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
         });
 
-        // Validasi No. HP: hanya angka dan maksimal 12 digit
         document.getElementById('no_hp').addEventListener('input', function(e) {
             this.value = this.value.replace(/[^0-9]/g, '');
             if (this.value.length > 12) {
