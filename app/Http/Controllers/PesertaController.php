@@ -58,11 +58,14 @@ class PesertaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_lengkap' => 'required|string|max:255',
+            'nama_lengkap' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z\s]+$/'],
             'nik'          => 'required|numeric|digits:16|unique:pesertas,nik',
             'skema_id'     => 'required|exists:skemas,id',
             'email'        => 'required|email|max:255',
-            'no_hp'        => 'required|numeric|digits:12',
+            'no_hp'        => 'required|numeric|digits_between:10,12',
+        ], [
+            'nama_lengkap.regex' => 'Nama lengkap hanya boleh berisi huruf dan spasi, tidak boleh mengandung angka.',
+            'no_hp.digits_between' => 'Nomor HP/WhatsApp harus di antara 10 hingga 12 digit.',
         ]);
 
         Peserta::create($request->all());
@@ -113,18 +116,42 @@ class PesertaController extends Controller
         }
 
         $request->validate([
-            'nama_lengkap' => 'required|string|max:255',
+            'nama_lengkap' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z\s]+$/'],
             'nik'          => 'required|numeric|digits:16|unique:pesertas,nik,' . $peserta->id,
             'skema_id'     => 'required|exists:skemas,id',
             'email'        => 'required|email|max:255',
-            'no_hp'        => 'required|numeric|digits:12',
+            'no_hp'        => 'required|numeric|digits_between:10,12',
+        ], [
+            'nama_lengkap.regex' => 'Nama lengkap hanya boleh berisi huruf dan spasi, tidak boleh mengandung angka.',
+            'no_hp.digits_between' => 'Nomor HP/WhatsApp harus di antara 10 hingga 12 digit.',
         ]);
 
         $peserta->update($request->all());
 
-        return redirect()->route('pesertas.index')->with('success', 'Data peserta berhasil diupdate.');
+        // Mengarahkan kembali ke halaman home/dashboard setelah update biodata
+        return redirect()->route('home')->with('success', 'Biodata berhasil diupdate.');
     }
 
+    // Membatalkan status verifikasi peserta (kembali ke Pending)
+    public function batalVerifikasi($id)
+    {
+        $peserta = Peserta::findOrFail($id);
+        $peserta->update([
+            'status' => 'Pending'
+        ]);
+
+        return redirect()->route('pesertas.index')->with('success', 'Status verifikasi peserta dibatalkan (Pending).');
+    }
+
+    public function verifikasi($id)
+    {
+        $peserta = Peserta::findOrFail($id);
+        $peserta->update([
+            'status' => 'Terverifikasi'
+        ]);
+
+        return redirect()->route('pesertas.index')->with('success', 'Status peserta berhasil diverifikasi.');
+    }
     // Menghapus data peserta (Hanya Admin).
     public function destroy($id)
     {

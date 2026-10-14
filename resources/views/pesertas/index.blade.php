@@ -33,6 +33,7 @@
                             <th>No. KTP / NIK</th>
                             <th>Email</th>
                             <th>No. Telepon</th>
+                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -41,13 +42,37 @@
                         <tr>
                             <td>{{ $pesertas->firstItem() ? $pesertas->firstItem() + $key : $key + 1 }}</td>
                             <td>{{ $peserta->nama_lengkap }}</td>
-                            <td>{{ $peserta->nik }}</td>
+                            <td>{{ $peserta->nik ?? '-' }}</td>
                             <td>{{ $peserta->email }}</td>
-                            <td>{{ $peserta->no_hp }}</td>
+                            <td>{{ $peserta->no_hp ?? '-' }}</td>
+                            <td>
+                                @if(isset($peserta->status) && $peserta->status == 'Terverifikasi')
+                                    <span class="badge bg-success">Terverifikasi</span>
+                                @else
+                                    <span class="badge bg-warning text-dark">Pending</span>
+                                @endif
+                            </td>
                             <td>
                                 {{-- KELOMPOK TOMBOL AKSI --}}
                                 @if(auth()->check())
-                                    {{-- Tombol Lihat (Show) bisa diakses oleh Admin maupun Peserta yang bersangkutan --}}
+                                    {{-- Tombol Verifikasi / Batal Verifikasi Khusus Admin --}}
+                                    @if(auth()->user()->isAdmin())
+                                        @if(isset($peserta->status) && $peserta->status == 'Terverifikasi')
+                                            <form action="{{ route('pesertas.batalVerifikasi', $peserta->id) }}" method="POST" class="d-inline">
+                                                @csrf
+                                                @method('PUT')
+                                                <button type="submit" class="btn btn-secondary btn-sm" onclick="return confirm('Yakin ingin membatalkan verifikasi peserta ini?')">Batal Verifikasi</button>
+                                            </form>
+                                        @else
+                                            <form action="{{ route('pesertas.verifikasi', $peserta->id) }}" method="POST" class="d-inline">
+                                                @csrf
+                                                @method('PUT')
+                                                <button type="submit" class="btn btn-success btn-sm">Verifikasi</button>
+                                            </form>
+                                        @endif
+                                    @endif
+
+                                    {{-- Tombol Lihat (Show) --}}
                                     <a href="{{ route('pesertas.show', $peserta->id) }}" class="btn btn-info btn-sm text-white">Lihat</a>
 
                                     {{-- Jika Admin: Bisa Edit & Hapus seluruh data --}}
@@ -68,7 +93,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="6" class="text-center">Data peserta tidak ditemukan.</td>
+                            <td colspan="7" class="text-center">Data peserta tidak ditemukan.</td>
                         </tr>
                         @endforelse
                     </tbody>

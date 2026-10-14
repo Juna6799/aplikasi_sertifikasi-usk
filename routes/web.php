@@ -28,3 +28,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('skemas', SkemaController::class);
 Route::resource('pesertas', PesertaController::class);
+Route::put('/pesertas/{id}/verifikasi', [App\Http\Controllers\PesertaController::class, 'verifikasi'])->name('pesertas.verifikasi');
+Route::put('/pesertas/{id}/batal-verifikasi', [App\Http\Controllers\PesertaController::class, 'batalVerifikasi'])->name('pesertas.batalVerifikasi');

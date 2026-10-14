@@ -72,7 +72,8 @@ class SkemaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $skema = Skema::findOrFail($id);
+        return view('skemas.show', compact('skema'));
     }
 
     /**

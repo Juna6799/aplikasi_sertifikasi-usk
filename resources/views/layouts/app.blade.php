@@ -55,7 +55,7 @@
                 <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar collapse p-3">
                     <div class="position-sticky">
                         <h4 class="text-white py-3 px-2 mb-4 border-bottom border-secondary">
-                            Sertifikasi
+                            Menu Sertifikasi
                         </h4>
                         <ul class="nav flex-column">
                             <!-- Menu Dashboard Ditambahkan di Sini -->
@@ -105,7 +105,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Sertifikasi
+                    Aplikasi Sertifikasi
                 </a>
                 <div class="ms-auto">
                     @if (Route::has('login'))

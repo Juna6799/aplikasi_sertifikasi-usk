@@ -45,6 +45,7 @@
                             <td>
                                 {{-- Tombol Edit & Hapus hanya muncul untuk Admin --}}
                                 @if(auth()->check() && auth()->user()->isAdmin())
+                                    <a href="{{ route('skemas.show', $skema->id)}}" class="btn btn-info btn-sm">Detail Data</a>
                                     <a href="{{ route('skemas.edit', $skema->id) }}" class="btn btn-warning btn-sm">Edit</a>
                                     <form action="{{ route('skemas.destroy', $skema->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus?')">
                                         @csrf
@@ -52,7 +53,7 @@
                                         <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                                     </form>
                                 @else
-                                    <span class="text-muted">Hanya Lihat</span>
+                                    <a href="{{route('skemas.show', $skema->id)}}" class="btn btn-primary btn-sm">Lihat Detail</a>
                                 @endif
                             </td>
                         </tr>
